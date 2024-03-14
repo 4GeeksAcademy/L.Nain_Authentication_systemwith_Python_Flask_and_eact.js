@@ -92,7 +92,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ token: null })
 				localStorage.removeItem('token')
 			},
-			ccc
+			verifyIdentity: () => {
+				let token = localStorage.getItem('token')
+				if (token) {
+					fetch(process.env.BACKEND_URL + '/api/verify_identity', {
+						method: 'GET',
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + token
+						}
+					})
+						.then(response => response.json())
+						.then(data => {
+							if (data && data.user) {
+								setStore({ user: data.user, token: token })
+							}
+						})
+				}
+			}
 		}
 	};
 };
