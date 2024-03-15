@@ -3,14 +3,29 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light">
+		<nav className="navbar navbar-light bg-primary">
 			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<Link to="/login">
+					<button className="btn btn-light navbar-brand mb-0 fw-bold">Iniciar Sesion</button>
 				</Link>
+				<div>
+				<Link to="/">
+					<button className="btn btn-light navbar-brand mb-0   fw-bold">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+							<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+							<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+						</svg>
+					</button>
+					</Link>
+
+
+
+				</div>
 				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+					<Link to="/signup">
+						<button className="btn btn-light navbar-brand mb-0  fw-bold">Registrate</button>
 					</Link>
 				</div>
 			</div>

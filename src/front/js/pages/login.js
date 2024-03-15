@@ -14,8 +14,14 @@ export const Login = () => {
     }
 
     return (
-        <div className="text-center mt-5">
-            <h1>Inicia Sesión</h1>
+        <div className="container text-center mt-5">
+            <div className="m-auto"style={{width:"25rem"}}>
+
+            <div className="row">
+            <h1 className="text-primary">Inicia Sesión</h1>
+                
+            </div>
+            <div row>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Email address</label>
@@ -32,6 +38,8 @@ export const Login = () => {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+            </div>
+            </div>
         </div>
     );
 };
